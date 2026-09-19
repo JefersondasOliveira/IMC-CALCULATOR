@@ -1,0 +1,42 @@
+body {
+    background-color: #434854;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    background-color: white;
+    
+    min-height: 60vh;
+    max-width: 500px;
+
+    margin: 100px auto 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+    font-size: large;
+}
+
+.tabela {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+}
+
+.titulo {
+    display: flex;
+    margin: auto 45%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+botao__calcular {
+    display: flex;
+    align-items: center;
+}
