@@ -2,6 +2,17 @@ const  form = document.querySelector('.form');
 const resultado  = document.querySelector('.calculo');
 const x  = document.querySelector('.x');
 const altura = document.querySelector('.altura');
+const nome = document.querySelector('.nome');
+
+const URL = 'file:///home/yam/Downloads/IMC%20PROJECT/index.html';
+
+async function pegegaAPI() {
+    const resp = await fetch(URL);
+    if(resp.status === 200) {
+        obj = await resp.json();
+    }
+
+}
 
 function pegaoform(evento){
 
@@ -26,16 +37,16 @@ function pegaoform(evento){
     const operacao = [
 
         [imc <= 18.5, "Abaixo do peso"],
-        [imc >= 18.5 && imc <= 24.9, "Peso normal"],
-        [imc >= 25 && imc <= 29.9, "Sobrepeso"],
-        [imc >= 30 && imc <= 34.9, "Obesidade Grau 1"],
-        [imc >= 35 && imc <= 39.9, "Obesidade Grau 2"],
-        [imc >= 40, "Obesidade Grau 3"]
+        [imc >= 18.5 && imc <= 24.9, "Peso normal " + nome.value],
+        [imc >= 25 && imc <= 29.9, "Sobrepeso " + nome.value],
+        [imc >= 30 && imc <= 34.9, "Obesidade Grau 1 " + nome.value],
+        [imc >= 35 && imc <= 39.9, "Obesidade Grau 2 " + nome.value],
+        [imc >= 40, "Obesidade Grau 3 " + nome.value]
     ];
 
         const mensagem = operacao.find(item => item[0]);
         
-        x.innerHTML = `<p>${imc.toFixed(2)} </p>`;
+        x.innerHTML = `<p>${imc.toFixed(2)}</p>`;
         x.innerHTML += `<p>${mensagem ? mensagem[1] : "Número errado meu camadara"} </p>`;
 }
 
